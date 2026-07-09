@@ -1,0 +1,12 @@
+how to run:::
+================
+in depi_project terminal
+uvicorn api:app --reload
+============
+and in new terminal
+cd frontend
+npm run dev
+===========================
+http://localhost:5173/exams
+=============
+interactive Swagger documentation::: http://localhost:8000/docs

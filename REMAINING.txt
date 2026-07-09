@@ -1,0 +1,155 @@
+REMAINING:::
+📚 RAG / Retrieval
+Retrieval Improvements
+Add confidence score based on vector distance.
+Upgrade to sentence-aware chunking (RecursiveCharacterTextSplitter or custom splitter).
+Add adaptive retrieval scoring.
+Add feedback-based retrieval.
+Add weak-topics retrieval.
+Improve detection of insufficient context to reduce LLM hallucinations before falling back to general knowledge.
+===================
+📖 Study Mode Qui
+Evaluate written answers against the retrieved context.
+===================
+exam:::
+Retrieval
+Replace semantic-search-only retrieval with document-wide retrieval.
+Generate questions from the entire selected lecture instead of only retrieved chunks.
+Allow the student to choose which uploaded document(s) to generate the exam from.
+Question Validation
+Add a second AI verification step after generation to independently verify that:
+Only one option is correct.
+The correct answer matches the retrieved evidence.
+No option contradicts the context.
+(Currently you're asking the same LLM to self-check inside one prompt; a separate verification pass would be more robust.)
+Question Types
+Support written (short-answer) questions.
+Evaluate written answers after submission.
+Include written questions in the final score.
+📚 Study Exam Mode
+
+Only when Study Mode is selected:
+
+Add an Explain button under each question after submission.
+Reuse the existing explanation_agent.
+Explain why the student's answer is incorrect (or confirm why it is correct).
+Explain why the correct answer is correct.
+Display supporting evidence from the retrieved context.
+Display source document, chapter, and page.
+===============================
+🎓 Tutor
+Tutor Logic
+Refactor Tutor into separate prompts for first message and continuation to improve reliability.
+Persist conversation memory across sessions (optional database/local storage).
+Tutor UI
+Convert Tutor into a chat interface.
+Separate student/tutor chat bubbles.
+Add labels/icons.
+Keep input fixed at the bottom.
+Auto-scroll.
+Move Sources section below the conversation.
+🎤 Interview
+Interview Logic
+Implement structured scoring rubric.
+Limit interview length (e.g. 5 questions).
+Generate final interview report.
+Provide overall strengths, weaknesses, and recommendations.
+Refactor Interview Agent into two prompts (First Interview Prompt + Evaluation Prompt).
+Detect first turn in the backend (len(history) == 0) instead of relying on prompt instructions.
+Prevent simulated candidate answers.
+Ensure the interviewer always waits for the student's response before continuing.
+Interview UI
+Redesign into chat bubbles.
+Separate interviewer/candidate messages.
+Auto-scroll.
+Typing indicator.
+Reuse Tutor chat component.
+🧠 Conversation Memory
+Integrate memory_agent.
+Reset conversation memory ("Clear Conversation").
+Extend memory to include:
+User level
+Weak topics
+Learning progress
+Persist memory across sessions (database/local storage).
+🏠 Home
+Display recent uploaded documents.
+Add quick actions.
+Display recent study sessions.
+Display user statistics (after login).
+📊 Dashboard
+Display learning statistics.
+Track completed quizzes.
+Track completed exams.
+Display accuracy percentage.
+Show weak topics.
+Show learning progress.
+Show recommended topics.
+Display difficulty level.
+Add progress charts.
+🔄 Compare Mode
+Add Compare page.
+Add Compare button inside Study Mode.
+Create /compare endpoint.
+Implement compare_agent.
+Compare concepts from the same document.
+Compare concepts across different documents.
+Retrieve context independently.
+Display side-by-side comparison.
+Include citations.
+Prevent information mixing.
+⚙️ Settings
+AI model selection.
+Theme settings.
+Language settings.
+Quiz preferences.
+Exam preferences.
+Reset conversation memory.
+Manage uploaded documents.
+Clear study history.
+🔐 Authentication
+Login
+Backend authentication.
+JWT.
+Form validation.
+Remember Me.
+Forgot Password.
+Session management.
+Register
+Backend registration.
+Password validation.
+Email validation.
+Duplicate account detection.
+Store user profile.
+📄 Project Builder
+Export to PDF.
+Export to Word.
+🧩 Agents
+Coordinator Agent.
+Memory Agent.
+Critic Agent.
+Difficulty Agent.
+Reflection Agent.
+Recommendation Agent.
+Revision Agent.
+📈 Analytics & Learning
+Topic Mastery.
+Study Heat Map.
+Full Dashboard Analytics.
+Weekly Report.
+Dynamic Explain Mode (Child / Beginner / University / Expert).
+🎙️ Voice Assistant
+Speech-to-text.
+Text-to-speech.
+🖼️ Visualization
+Mind Map Generator.
+Mermaid Diagram Generator.
+PDF Highlighting.
+📺 Recommendations
+YouTube Recommendation Assistant (based on weak topics).
+📤 Export
+PowerPoint Export.
+TXT Export.
+🔍 Other Features
+Semantic Search UI.
+Multimodal / OCR support.
